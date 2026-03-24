@@ -56,6 +56,11 @@ export const fetchPokemonDetails = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    if (!data) {
+      //Vérification de l'exploitabilités des données reçues
+      throw new Error("Donnée invalide");
+    } //Levé d'erreur + message personnalisé
+    return data;
   } catch (erreur) {
     searchFalse(erreur.message);
   }

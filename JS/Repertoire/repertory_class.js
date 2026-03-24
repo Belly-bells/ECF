@@ -16,6 +16,7 @@ export class pokemon {
 
   getHTML() {
     const pok = document.querySelector("section");
+    pok.innerHTML = ""; //Vide tout le contenu (balise + texte) alors que ".textContent" laissent des balises orphelines
     //Variable 1 = Image
     let imagePok = document.createElement("img");
     imagePok.classList.add("imgPok");
