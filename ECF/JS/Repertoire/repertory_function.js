@@ -1,4 +1,4 @@
-import { searchTrue } from "./callAPI";
+import { searchTrue } from "./callAPI.js"; //Attention au ".js"
 //Création de la RegExp + conditions avec mise à plats de conditions
 export const verifSEARCH = (searchTrue) => {
   let monInput = document.querySelector("input").value;

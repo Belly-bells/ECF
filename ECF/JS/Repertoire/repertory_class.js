@@ -1,4 +1,4 @@
-import { createEvolution } from "./repertory_function";
+import { createEvolution } from "./repertory_function.js"; //Attention au ".js"
 
 export class pokemon {
   constructor(imgURL, name, numPok, type, country, ptLife, ptAttack, ptDef, evolution, description) {

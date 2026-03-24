@@ -1,4 +1,4 @@
-import { pokemon } from "./repertory_class";
+import { pokemon } from "./repertory_class.js"; //Attention au ".js"
 import { verifSEARCH, searchFalse, searchType } from "./repertory_function";
 verifSEARCH(searchType);
 
