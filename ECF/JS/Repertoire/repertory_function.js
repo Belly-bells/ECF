@@ -1,5 +1,6 @@
+import { searchTrue } from "./callAPI";
 //Création de la RegExp + conditions avec mise à plats de conditions
-export const verifSEARCH = () => {
+export const verifSEARCH = (searchTrue) => {
   let monInput = document.querySelector("input").value;
   let regName = /^\p{L}+$/iu;
   //Flag Unicode "u" est obligatoire en cas d'utilisation de "p{L}"
@@ -40,7 +41,6 @@ export function createEvolution(evolution) {
 
 //Condition false = création d'autres balises
 export function searchFalse(message) {
-  const p = document.createElement("p");
-  p.textContent = message; //Easter eggs à trouver et mettre
-  node.appendChild(p);
+  const node = document.querySelector("#error-message");
+  node.textContent = message;
 }
