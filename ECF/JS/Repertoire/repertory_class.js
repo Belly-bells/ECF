@@ -4,8 +4,8 @@ export class pokemon {
     this.name = name; //OK
     this.numPok = numPok; //OK
     this.type = type; //OK
-    this.country = country;
-    this.ptLife = ptLife;
+    this.country = country; //OK
+    this.ptLife = ptLife; //OK
     this.ptAttack = ptAttack;
     this.ptDef = ptDef;
     this.evolution = evolution;
@@ -31,11 +31,45 @@ export class pokemon {
     numePok.textContent = this.numPok;
     //variable 4 = type du pokémon + boucles for + conditions (if) dans la boucle
     // //Boucles "for" + condtions (méthode : utilisation de la mise à plat)
-    for (i = 1; i >= 2; i++) {
+    for (const elt of this.type) {
       let typePok = document.createElement("p");
       typePok.id = "tyPok";
       pok.appendChild(typePok);
-      typePok.textContent = this.type;
+      typePok.textContent = elt;
     }
+
+    //Variable 5 = Région de vie
+    let countPok = document.createElement("p");
+    countPok.id = "coontryPok";
+    pok.appendChild(countPok);
+    countPok.textContent = this.country;
+
+    //Variable 6 = Points de vie
+    let ptL = document.createElement("p");
+    ptL.id = "pointLife";
+    pok.appendChild(ptL);
+    ptL.textContent = this.ptLife;
+
+    //Variable 7 = Points d'attaque
+    let ptAPok = document.createElement("p");
+    ptAPok.id = "pointAttack";
+    pok.appendChild(ptAPok);
+    ptAPok.textContent = this.ptAttack;
+
+    //Variable 8 = Points de défense
+    let ptDefPok = document.createElement("p");
+    ptDefPok.id = "pointDefense";
+    pok.appendChild(ptDefPok);
+    ptDefPok.textContent = this.ptDef;
+
+    //Variable 9 = Evolution possible en fonction du niveau + niveau d'évolution
+    //A définir en fonction du fonctionnement de l'API
+    createEvolution(this.evolution);
+
+    //variable 10 = Description
+    let descPok = document.createElement("p");
+    descPok.id = "descriptionPok";
+    pok.appendChild(descPok);
+    descPok.textContent = this.description;
   }
 }
