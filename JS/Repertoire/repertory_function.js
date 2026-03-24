@@ -1,6 +1,6 @@
 import { searchTrue } from "./callAPI.js"; //Attention au ".js"
 //Création de la RegExp + conditions avec mise à plats de conditions
-export const verifSEARCH = (searchTrue) => {
+export const verifSEARCH = () => {
   let monInput = document.querySelector("input").value;
   let regName = /^\p{L}+$/iu;
   //Flag Unicode "u" est obligatoire en cas d'utilisation de "p{L}"
