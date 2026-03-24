@@ -1,3 +1,5 @@
+import { createEvolution } from "./repertory_function";
+
 export class pokemon {
   constructor(imgURL, name, numPok, type, country, ptLife, ptAttack, ptDef, evolution, description) {
     this.imgURL = imgURL; //OK
@@ -63,7 +65,7 @@ export class pokemon {
     ptDefPok.textContent = this.ptDef;
 
     //Variable 9 = Evolution possible en fonction du niveau + niveau d'évolution
-    //A définir en fonction du fonctionnement de l'API
+    //Appel de la fonction avec en paramétre (this.evolution)
     createEvolution(this.evolution);
 
     //variable 10 = Description
