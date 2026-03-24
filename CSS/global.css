@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bleu_fonce: #077f8c;
+  --bleuClaire: #65bfaf;
+  --blanCassee: #f2f1dc;
+  --rouille: #a64e2e;
+  --orangeVif: #d95d41;
+
+  /*Typographie*/
+  --corps_de_texte: "comic", sans-serif;
+  --corps_titre: "pacifico", sans-serif;
+
+  /*GAP*/
+  --gap: 15px;
+  --gap_carte: 10px;
+}
