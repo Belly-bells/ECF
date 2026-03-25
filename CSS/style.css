@@ -5,7 +5,12 @@ body {
     gap: var(--gap);
 
     & section {
+      flex: 1;
       margin: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap);
+      flex: 1;
     }
     & .articlePok {
       background-color: var(--bleuClaire);
@@ -20,7 +25,10 @@ body {
       }
     }
     & #loadAgain {
+      order: 9999;
+      flex-basis: 50%;
       width: 50%;
+      align-self: flex-end;
       display: block;
       margin: var(--gap) auto;
       background-color: var(--rouille);
@@ -29,6 +37,7 @@ body {
       border-radius: 15px;
       padding: 10px 20px;
       cursor: pointer;
+      align-self: flex-end;
 
       &:hover {
         background-color: var(--orangeVif);
