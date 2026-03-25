@@ -1,4 +1,4 @@
-import { pokemon } from "./repertory_class.js"; //Attention au ".js"
+import { pokemon, pokemonScreen } from "./repertory_class.js"; //Attention au ".js"
 import { searchFalse } from "./repertory_function.js";
 
 export const searchTrue = async (monInput, searchType) => {
@@ -71,4 +71,14 @@ export const loadBatch = async () => {
       return pokDetails;
     }),
   );
+  for (const elt of details) {
+    //Instanciation de la classe objet pokemonScreen
+    const affPok = new pokemonScreen(
+      elt.name, //Nom
+      elt.sprites.front_default, //IMG
+      elt.id, //ID pokédex
+      elt.types.map((t) => t.type.name),
+    );
+    affPok.getCardHTML(); //Attention : tu dois appeler l'instance de classe et non la classe donc : instanceDeClasse.Méthode()
+  }
 };

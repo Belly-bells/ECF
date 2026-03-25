@@ -32,7 +32,7 @@ export class pokemon {
     numePok.id = "numberPok";
     pok.appendChild(numePok);
     numePok.textContent = this.numPok;
-    //variable 4 = type du pokémon + boucles for + conditions (if) dans la boucle
+    //variable 4 = type du pokémon + boucles for
     // //Boucles "for" + condtions (méthode : utilisation de la mise à plat)
     for (const elt of this.type) {
       let typePok = document.createElement("p");
@@ -84,29 +84,33 @@ export class pokemonScreen {
     this.number = number;
     this.categories = categories;
   }
-
-  getCArdHTML() {
+  //Méthode de la classe objet pour créer une balise "div" englobant élément suivant : nom, numéro de pokédex, image, types.
+  getCardHTML() {
     const screenPok = document.querySelector("main");
+    let artPok = document.createElement("article");
+    artPok.classList.add("articlePok");
+    screenPok.appendChild(artPok);
+    artPok.addEventListener("click", () => {
+      window.location.href = `details.html?id=${this.number}`; //Le programme fait le mêm cheminement que si l'utilisateur taper l'ID du pokémon dans la barre de recherche
+    });
 
+    //Variable 1 = image du pokémon
     let imgP = document.createElement("img");
     imgP.classList.add("screenPok");
-    screenPok.appendChild(imgP);
+    artPok.appendChild(imgP);
     imgP.setAttribute("src", this.image);
     //Variable 2 = nom du prokémon
     let nomPok = document.createElement("h2");
-    nomPok.id = "namePok";
-    screenPok.appendChild(nomPok);
+    artPok.appendChild(nomPok);
     nomPok.textContent = this.name;
     //Variable 3 = numéro de Pokédex
     let numberPok = document.createElement("p");
-    numberPok.id = "numPok";
-    screenPok.appendChild(numberPok);
+    artPok.appendChild(numberPok);
     numberPok.textContent = this.number;
-
+    //variable 4 = type du pokémon + boucles for
     for (const elt of this.categories) {
       let catPok = document.createElement("p");
-      catPok.id = "categoriesPok";
-      screenPok.appendChild(catPok);
+      artPok.appendChild(catPok);
       catPok.textContent = elt;
     }
   }
