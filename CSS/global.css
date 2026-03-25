@@ -21,9 +21,35 @@
 }
 
 body {
-  display: flex;
-
+  background-color: var(--blanCassee);
   & header {
     display: flex;
+    align-items: center;
+    background-color: var(--bleu_fonce);
+    padding: 10px;
+    & form {
+      margin-left: auto;
+    }
+    & img {
+      width: 50px;
+    }
+    & #benjamin,
+    & #dreamTeam {
+      text-decoration: none;
+      color: var(--blanCassee);
+      background-color: var(--rouille);
+      border-radius: 15px;
+      padding: 10px;
+    }
+    & #benjamin:hover,
+    & #dreamTeam:hover {
+      background-color: var(--orangeVif);
+    }
+  }
+  & footer {
+    background-color: var(--bleu_fonce);
+    color: var(--blanCassee);
+    padding: 10px;
+    text-align: center;
   }
 }
