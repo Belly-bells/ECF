@@ -53,19 +53,22 @@ export const loadPokemon = async () => {
 //Affichage page d'acceuil : constante appel API pour l'affichage des pokémon
 export const fetchPokemonDetails = async (url) => {
   //url est vide + attente d'un paramétre
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    if (!data) {
-      //Vérification de l'exploitabilités des données reçues
-      throw new Error("Donnée invalide");
-    } //Levé d'erreur + message personnalisé
-    return data;
-  } catch (erreur) {
-    searchFalse(erreur.message);
-  }
+  const response = await fetch(url);
+  if (!response.ok) {
+    //Propriété ".ok" = Booléen indique si la réponse à réussi ou pas.
+    //Vérification de l'exploitabilités des données reçues
+    throw new Error("Donnée invalide");
+  } //Levé d'erreur + message personnalisé
+  return await response.json();
 };
 
 export const loadBatch = async () => {
   const list = await loadPokemon();
+  const details = await Promise.all(
+    //Promise.all() exécute tous les appels API en parallèle et attend qu'ils soient tous terminés
+    list.map(async (pok) => {
+      const pokDetails = await fetchPokemonDetails(pok.url);
+      return pokDetails;
+    }),
+  );
 };

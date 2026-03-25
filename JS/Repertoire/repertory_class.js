@@ -76,3 +76,38 @@ export class pokemon {
     descPok.textContent = this.description;
   }
 }
+
+export class pokemonScreen {
+  constructor(name, image, number, categories) {
+    this.name = name;
+    this.image = image;
+    this.number = number;
+    this.categories = categories;
+  }
+
+  getCArdHTML() {
+    const screenPok = document.querySelector("main");
+
+    let imgP = document.createElement("img");
+    imgP.classList.add("screenPok");
+    screenPok.appendChild(imgP);
+    imgP.setAttribute("src", this.image);
+    //Variable 2 = nom du prokémon
+    let nomPok = document.createElement("h2");
+    nomPok.id = "namePok";
+    screenPok.appendChild(nomPok);
+    nomPok.textContent = this.name;
+    //Variable 3 = numéro de Pokédex
+    let numberPok = document.createElement("p");
+    numberPok.id = "numPok";
+    screenPok.appendChild(numberPok);
+    numberPok.textContent = this.number;
+
+    for (const elt of this.categories) {
+      let catPok = document.createElement("p");
+      catPok.id = "categoriesPok";
+      screenPok.appendChild(catPok);
+      catPok.textContent = elt;
+    }
+  }
+}
