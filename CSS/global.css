@@ -19,3 +19,11 @@
   --gap: 15px;
   --gap_carte: 10px;
 }
+
+body {
+  display: flex;
+
+  & header {
+    display: flex;
+  }
+}
