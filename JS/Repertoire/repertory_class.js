@@ -1,4 +1,4 @@
-import { createEvolution } from "./repertory_function.js"; //Attention au ".js"
+import { addTeam, createEvolution } from "./repertory_function.js"; //Attention au ".js"
 
 export class pokemon {
   constructor(imgURL, name, numPok, type, country, ptLife, ptAttack, ptDef, evolution, description) {
@@ -90,8 +90,21 @@ export class pokemonScreen {
     let artPok = document.createElement("article");
     artPok.classList.add("articlePok");
     screenPok.appendChild(artPok);
-    artPok.addEventListener("click", () => {
+    artPok.addEventListener("click", (e) => {
+      e.preventDefault();
       window.location.href = `detail.html?id=${this.number}`; //Le programme fait le mêm cheminement que si l'utilisateur taper l'ID du pokémon dans la barre de recherche
+    });
+    let buttonTeam = document.createElement("button");
+    artPok.appendChild(buttonTeam);
+    buttonTeam.textContent = "Je te choisis";
+    buttonTeam.addEventListener("click", (e) => {
+      e.stopPropagation(); //Évite que l'évènement courant (renvoie sur la page detail.html) ne se propage plus loin dans les phases de capture et de déploiement
+      addTeam({
+        name: this.name,
+        image: this.image,
+        number: this.number,
+        categories: this.categories,
+      });
     });
 
     //Variable 1 = image du pokémon

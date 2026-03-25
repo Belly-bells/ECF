@@ -44,3 +44,17 @@ export function searchFalse(message) {
   const node = document.querySelector("#error-message");
   node.textContent = message;
 }
+
+export function addTeam(pokemon) {
+  const equipe = JSON.parse(localStorage.getItem("equipe")) || []; // Récupération = conversion inversion
+  console.log("Equipe actuelle :", equipe, "Longueur :", equipe.length);
+
+  //Conditions : pas plus de 6 pokémons par éuipe
+  if (equipe.length >= 6) {
+    searchFalse("Ton équipe est compléte, cher dresseur !");
+    return;
+  }
+
+  equipe.push(pokemon); //Ajouter dans l'équipe
+  localStorage.setItem("equipe", JSON.stringify(equipe)); // Stocker = conversion objet → string. Méthode statique ".stringify()" convertit une valeur en une chaine de caractére JSON (JavaScript object Notation).
+}
