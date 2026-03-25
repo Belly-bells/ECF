@@ -49,6 +49,9 @@ body {
     & #dreamTeam:hover {
       background-color: var(--orangeVif);
     }
+    & #searchBar {
+      border-radius: 10px;
+    }
   }
   & footer {
     background-color: var(--bleu_fonce);
