@@ -30,6 +30,9 @@ body {
     & form {
       margin-left: auto;
     }
+    & h1 {
+      font-family: var(--corps_titre);
+    }
     & img {
       width: 50px;
     }
@@ -40,6 +43,7 @@ body {
       background-color: var(--rouille);
       border-radius: 15px;
       padding: 10px;
+      margin-left: var(--gap);
     }
     & #benjamin:hover,
     & #dreamTeam:hover {
