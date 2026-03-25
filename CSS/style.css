@@ -1,0 +1,38 @@
+body {
+  & main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+
+    & section {
+      margin: 15px;
+    }
+    & .articlePok {
+      background-color: var(--bleuClaire);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: var(--gap_carte);
+      border: 2px solid transparent;
+      margin: 15px;
+
+      &:hover {
+        border: 2px solid var(--rouille);
+      }
+    }
+    & #loadAgain {
+      width: 50%;
+      display: block;
+      margin: var(--gap) auto;
+      background-color: var(--rouille);
+      color: var(--blanCassee);
+      border: none;
+      border-radius: 15px;
+      padding: 10px 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--orangeVif);
+      }
+    }
+  }
+}
