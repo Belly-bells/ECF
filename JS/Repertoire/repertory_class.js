@@ -91,7 +91,7 @@ export class pokemonScreen {
     artPok.classList.add("articlePok");
     screenPok.appendChild(artPok);
     artPok.addEventListener("click", () => {
-      window.location.href = `details.html?id=${this.number}`; //Le programme fait le mêm cheminement que si l'utilisateur taper l'ID du pokémon dans la barre de recherche
+      window.location.href = `detail.html?id=${this.number}`; //Le programme fait le mêm cheminement que si l'utilisateur taper l'ID du pokémon dans la barre de recherche
     });
 
     //Variable 1 = image du pokémon
